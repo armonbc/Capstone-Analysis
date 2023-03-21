@@ -29,7 +29,9 @@ jobs:
           python3 Pythonscripts/all_zip_downloader.py
       
     - name: Zip Files
-      run: zip -r files.zip "../original_zipfiles/"
+      run: |
+        zip -r files.zip "../original_zipfiles/"
+        ls -la "../original_zipfiles/"
         
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
