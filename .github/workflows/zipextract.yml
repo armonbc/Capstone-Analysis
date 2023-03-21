@@ -9,22 +9,20 @@ jobs:
     steps:
     - name: List current dir....
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
+    
     - name: Download Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: file.zip # Replace with the name of your artifact
-        path: /original_zipfiles/ # Replace with the path where you want to save the artifact
+      run: wget file.zip "https://github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
     - name: Configure Git
       run: |
-        git config --global user.name ${{ secrets.GH_NAME }}
-        git config --global user.email ${{ secrets.GH_EMAIL }}
+        git config --global user.name ${{secrets.GH_NAME}}
+        git config --global user.email ${{secrets.GH_EMAIL}}
     - name: Add Files
       run: |
         git add .
         git commit -m "Add artifact"
     - name: Push to Public Repository
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }} # Replace with your access token
-          branch: main
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}} # Replace with your access token
+        branch: main
     
