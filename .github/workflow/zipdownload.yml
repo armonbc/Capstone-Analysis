@@ -1,0 +1,28 @@
+name: Zip File Download Operations
+
+on: [push]
+
+jobs:
+  python_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List current dir....
+      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
+    
+    - name: checkout repo content
+      uses: actions/checkout@v2 # checkout the repository content
+
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' # install the python version needed
+
+    - name: Install python packages....
+      run: |
+          python -m pip install --upgrade pip
+          pip3 install bs4
+          sudo apt install clang
+
+    - name: Executing Python....
+      run: |
+          python all_zip_downloader.py
