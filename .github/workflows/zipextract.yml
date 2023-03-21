@@ -20,7 +20,9 @@ jobs:
       # with:
       # name: file.zip
       # path: /original_zipfiles/
-      run: curl -L -H "Authorization:Bearer $USER_TOKEN" -o file.zip "https://api.github.com/repos/armonbc/Capstone-Analysis/actions/artifacts/608912866/zip"
+      run: |
+        curl -L -H "Authorization:Bearer $USER_TOKEN" -o file.zip "https://api.github.com/repos/armonbc/Capstone-Analysis/actions/artifacts/608912866/zip"
+        ls -la
 
     - name: Configure Git
       run: |
@@ -28,7 +30,7 @@ jobs:
         git config --global user.email USER_MAIL
     - name: Add Files
       run: |
-        git lfs track ".zip"
+        #git lfs track ".zip"
         git add ".zip"
         git commit -m "Add artifact"
     - name: Push to Public Repository
