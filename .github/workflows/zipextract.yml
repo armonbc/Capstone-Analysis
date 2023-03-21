@@ -7,6 +7,8 @@ jobs:
   extract_job:
     runs-on: ubuntu-latest
     steps:
+    - name: checkout repo content
+      uses: actions/checkout@v2 # checkout the repository content
     - name: List current dir....
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
     - name: Download Artifact
