@@ -20,7 +20,7 @@ jobs:
       # with:
       # name: file.zip
       # path: /original_zipfiles/
-      run: wget -O file.zip "https://$USER_EMAIL:$USER_TOKEN@github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
+      run: wget -O file.zip "https://$USER_MAIL:$USER_TOKEN@github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
     - name: Configure Git
       run: |
         git config --global user.name USER_NAME
