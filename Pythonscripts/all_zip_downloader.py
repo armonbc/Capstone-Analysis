@@ -21,7 +21,7 @@ soup = BeautifulSoup(xml_response.content, 'xml')
 # loop through each object and print its key
 for content in soup.find_all('Contents'):
     key = content.find('Key').text
-    if key and key.endswith('.zip') and (key.startswith('2022-') or key.startswith('2023-')):
+    if key and key.endswith('.zip') and (key.startswith('2022') or key.startswith('2023')):
        file_abs = f"{url}/{key}"
        print(f"Downloading ... {file_abs}")
        # Download the file to the download directory
