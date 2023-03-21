@@ -10,7 +10,11 @@ jobs:
     - name: List current dir....
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
     - name: Download Artifact
-      run: wget file.zip "https://github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
+      uses: actions/download-artifact@v2
+      with:
+        name: file.zip
+        path: /original_zipfiles/
+      # run: wget file.zip "https://github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
       env:
         USER_NAME: ${{secrets.GH_NAME}}
         USER_MAIL: ${{secrets.GH_EMAIL}} 
