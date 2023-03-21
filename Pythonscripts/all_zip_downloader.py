@@ -6,7 +6,7 @@ import os
 url = "https://divvy-tripdata.s3.amazonaws.com"
 
 # Directory to save the downloaded files
-download_dir = "../cleaned_datasets"
+download_dir = "../original_zipfiles"
 
 # Create the directory if it doesn't exist
 if not os.path.exists(download_dir):
