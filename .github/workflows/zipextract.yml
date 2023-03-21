@@ -31,6 +31,6 @@ jobs:
         git config --global user.email USER_MAIL
     - name: Add Files
       run: |
-        git add "file.zip"
+        git add .
         git commit -m "Add artifact"
         git push
