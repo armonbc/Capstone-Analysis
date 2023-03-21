@@ -20,7 +20,7 @@ jobs:
       # with:
       # name: file.zip
       # path: /original_zipfiles/
-      run: curl -L -H "Authorization: Bearer $USER_TOKEN" -o file.zip https://api.github.com/repos/armonbc/Capstone-Analysis/actions/artifacts/608657702/zip
+      run: curl -L -H "Authorization:Bearer $USER_TOKEN" -o file.zip "https://api.github.com/repos/armonbc/Capstone-Analysis/actions/artifacts/608657702/zip"
 
     - name: Configure Git
       run: |
