@@ -1,15 +1,14 @@
 name: Extract Zip Files Operations
 
-on: 
+on:
   workflow_dispatch:
 
 jobs:
-  extract_zip_job:
+  extract_job:
     runs-on: ubuntu-latest
     steps:
     - name: List current dir....
-      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
-    
+      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
     - name: Download Artifact
       run: wget file.zip "https://github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
     - name: Configure Git
@@ -25,4 +24,3 @@ jobs:
       with:
         github_token: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}} # Replace with your access token
         branch: main
-    
