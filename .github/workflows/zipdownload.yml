@@ -1,6 +1,9 @@
 name: Zip File Download Operations
 
-on: [push]
+on: 
+  repository_dispatch:
+    types: [my-event-type]
+
 
 jobs:
   python_job:
