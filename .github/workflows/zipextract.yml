@@ -11,10 +11,14 @@ jobs:
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
     - name: Download Artifact
       run: wget file.zip "https://github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
+      env:
+        USER_NAME: ${{secrets.GH_NAME}}
+        USER_MAIL: ${{secrets.GH_EMAIL}} 
+        USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
     - name: Configure Git
       run: |
-        git config --global user.name ${{secrets.GH_NAME}}
-        git config --global user.email ${{secrets.GH_EMAIL}}
+        git config --global user.name USER_NAME
+        git config --global user.email USER_MAIL
     - name: Add Files
       run: |
         git add .
@@ -22,5 +26,5 @@ jobs:
     - name: Push to Public Repository
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}} # Replace with your access token
+        github_token: USER_TOKEN
         branch: main
