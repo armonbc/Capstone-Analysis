@@ -1,9 +1,7 @@
 name: Zip File Download Operations
 
 on: 
-  repository_dispatch:
-    types: [my-event-type]
-
+  workflow_dispatch:
 
 jobs:
   python_job:
@@ -29,3 +27,12 @@ jobs:
     - name: Executing Python....
       run: |
           python3 Pythonscripts/all_zip_downloader.py
+      
+    - name: Zip Files
+      run: zip -r files.zip "../original_zipfiles/"
+        
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: zip-files
+        path: ./files.zip
