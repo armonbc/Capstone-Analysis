@@ -12,15 +12,15 @@ jobs:
     - name: List current dir....
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
     - name: Download Artifact
-      # uses: actions/download-artifact@v2
-      # with:
-      # name: file.zip
-      # path: /original_zipfiles/
-      run: wget file.zip "https://$USER_EMAIL:$USER_TOKEN@github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
       env:
         USER_NAME: ${{secrets.GH_NAME}}
         USER_MAIL: ${{secrets.GH_EMAIL}} 
         USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
+      # uses: actions/download-artifact@v2
+      # with:
+      # name: file.zip
+      # path: /original_zipfiles/
+      run: wget -O file.zip "https://$USER_EMAIL:$USER_TOKEN@github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
     - name: Configure Git
       run: |
         git config --global user.name USER_NAME
