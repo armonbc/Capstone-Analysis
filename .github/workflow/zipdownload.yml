@@ -25,4 +25,4 @@ jobs:
 
     - name: Executing Python....
       run: |
-          python all_zip_downloader.py
+          python3 Pythonscripts/all_zip_downloader.py
