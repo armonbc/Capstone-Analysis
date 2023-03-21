@@ -16,7 +16,7 @@ jobs:
       # with:
       # name: file.zip
       # path: /original_zipfiles/
-      run: wget file.zip "https://$USER_EMAIL:$USER_TOKEN@github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
+      run: wget -O file.zip "https://$USER_EMAIL:$USER_TOKEN@github.com/armonbc/Capstone-Analysis/suites/11700556288/artifacts/608657702"
       env:
         USER_NAME: ${{secrets.GH_NAME}}
         USER_MAIL: ${{secrets.GH_EMAIL}} 
