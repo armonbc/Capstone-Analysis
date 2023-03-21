@@ -23,7 +23,8 @@ jobs:
       run: |
         curl -L -H "Authorization:Bearer $USER_TOKEN" -o file.zip "https://api.github.com/repos/armonbc/Capstone-Analysis/actions/artifacts/608912866/zip"
         ls -la
-
+    - name: Checkout repository
+      uses: actions/checkout@v2
     - name: Configure Git
       run: |
         git config --global user.name USER_NAME
@@ -32,8 +33,4 @@ jobs:
       run: |
         git add "file.zip"
         git commit -m "Add artifact"
-    - name: Push to Public Repository
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: USER_TOKEN
-        branch: main
+        git push
