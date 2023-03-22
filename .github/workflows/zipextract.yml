@@ -34,5 +34,6 @@ jobs:
         git lfs track .
         git add .gitattributes
         git add .
+        git lfs fetch --all source
         git commit -m "Extracting zip files to CSV"
         git push --force
