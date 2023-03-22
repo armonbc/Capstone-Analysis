@@ -30,7 +30,7 @@ jobs:
       
     - name: Zip Files
       run: |
-        zip -r files.zip "../original_zipfiles/"
+        # zip -r files.zip "../original_zipfiles/"
         ls -la "../original_zipfiles/"
         
     - name: Upload Artifacts
