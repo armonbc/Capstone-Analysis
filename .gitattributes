@@ -2,3 +2,4 @@
 original_datasets/202205-divvy-tripdata/202205-divvy-tripdata.csv filter=lfs diff=lfs merge=lfs -text
 original_datasets/202206-divvy-tripdata/202206-divvy-tripdata.csv filter=lfs diff=lfs merge=lfs -text
 original_datasets/202207-divvy-tripdata/202207-divvy-tripdata.csv filter=lfs diff=lfs merge=lfs -text
+*.csv filter=lfs diff=lfs merge=lfs -text
