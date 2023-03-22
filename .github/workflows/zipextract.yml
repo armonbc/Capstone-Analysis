@@ -37,4 +37,8 @@ jobs:
         git lfs track ".zip"
         git add .
         git commit -m "Add artifact"
-        git push origin main
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: $GITHUB_TOKEN
+        branch: ${{ github.ref }}
