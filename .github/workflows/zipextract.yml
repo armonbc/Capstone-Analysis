@@ -7,8 +7,6 @@ jobs:
   extract_job:
     runs-on: ubuntu-latest
     steps:
-    - name: Otentikiting
-      run: git config --global --add url."git@github.com:".insteadOf "https://github.com/"
     - name: checkout repo content
       uses: actions/checkout@v3
       env:
