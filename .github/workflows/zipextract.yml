@@ -15,7 +15,7 @@ jobs:
      
     - name: Extracting Zip Files
       run: |
-        unzip "original_zipfiles/202203-divvy-tripdata.zip" -d "original_datasets/"
+        unzip "original_zipfiles/202203-divvy-tripdata.zip" -d "original_datasets/202203-divvy-tripdata/"
         ls -la "original_datasets/"
     
     - name: Configure Git
@@ -30,6 +30,6 @@ jobs:
     - name: Add Files
       run: |
         pwd && ls -la
-        git add ./* !original_datasets/__MACOSX
+        git add .
         git commit -m "Extracting zip files to CSV"
-        git push
+        git push --force
