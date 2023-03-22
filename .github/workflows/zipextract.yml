@@ -25,12 +25,12 @@ jobs:
         ls -la
     - name: Configure Git
       run: |
-        git config --global user.name $USER_NAME
-        git config --global user.email $USER_MAIL
+        git config --global user.name USER_NAME
+        git config --global user.email USER_MAIL
         git config --global credential.helper store
         git config --global credential.helper 'cache --timeout=3600'
-        git config --global credential.https://github.com.username $USER_NAME
-        git config --global credential.https://github.com.password $USER_TOKEN
+        git config --global credential.https://github.com.username USER_NAME
+        git config --global credential.https://github.com.password USER_TOKEN
 
     - name: Add Files
       run: |
