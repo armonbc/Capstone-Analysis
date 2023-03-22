@@ -8,10 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo content
-      uses: actions/checkout@v2 # checkout the repository content
-      with:
-        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-        fetch-depth: 0
+      uses: actions/checkout@v2
     - name: List current dir....
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
     - name: Download Artifact
