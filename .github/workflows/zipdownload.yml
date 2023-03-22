@@ -44,7 +44,7 @@ jobs:
         git config --global user.email USER_MAIL
     - name: Add Files
       run: |
-        pwd && ls -la && cp -R "../original_zipfiles/"
+        pwd && ls -la && cp -R "../original_zipfiles/" "original_zipfiles/"
         git add "original_zipfiles/"
         git commit -m "Add zip files"
         git push
