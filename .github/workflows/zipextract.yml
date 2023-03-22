@@ -33,9 +33,9 @@ jobs:
     - name: Add Files
       run: |
         pwd && ls -la
-        git lfs checkout
-        git lfs install
-        git lfs track .
+        #git lfs checkout
+        #git lfs install
+        #git lfs track .
         git add .gitattributes
         git add original_datasets/202205-divvy-tripdata/202205-divvy-tripdata.csv
         git commit -m "Extracting zip files to CSV"
