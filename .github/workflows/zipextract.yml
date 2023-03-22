@@ -32,5 +32,7 @@ jobs:
         pwd && ls -la
         git lfs install
         git lfs track .
+        git add .gitattributes
+        git add .
         git commit -m "Extracting zip files to CSV"
         git push --force
