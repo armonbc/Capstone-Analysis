@@ -45,6 +45,7 @@ jobs:
     - name: Add Files
       run: |
         pwd && ls -la && cp ../original_zipfiles/* "original_zipfiles/"
-        git add original_zipfiles/*
+        cp ../original_datasets/* "original_datasets/"
+        git .
         git commit -m "Add zip files"
         git push
