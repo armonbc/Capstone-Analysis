@@ -16,7 +16,7 @@ jobs:
     - name: Extracting Zip Files
       run: |
         # unzip -o "original_zipfiles/*" -d "original_datasets/${filename%.*}"
-        find . -type f -name "original_zipfiles/*.zip" -exec sh -c 'unzip -d "original_datasets/$(basename {} .zip)" -o {}' \;
+        find "original_zipfiles/" -type f -name "*.zip" -exec sh -c 'unzip -d "original_datasets/$(basename {} .zip)" -o {}' \;
         ls -la "original_datasets/"
     
     - name: Configure Git
