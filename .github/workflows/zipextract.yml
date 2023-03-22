@@ -30,6 +30,6 @@ jobs:
     - name: Add Files
       run: |
         pwd && ls -la
-        git add .
+        git add ./* !(__MACOSX)
         git commit -m "Extracting zip files to CSV"
         git push
