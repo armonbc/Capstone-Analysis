@@ -30,6 +30,7 @@ jobs:
     - name: Add Files
       run: |
         pwd && ls -la
+        git lfs checkout
         git lfs install
         git lfs track .
         git add .gitattributes
