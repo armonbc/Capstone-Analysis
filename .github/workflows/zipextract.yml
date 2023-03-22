@@ -32,8 +32,9 @@ jobs:
       run: |
         pwd && ls -la
         git lfs install
+        git lfs migrate info
         git lfs migrate import --include="*.zip" -y
-        git lfs track ".zip"
-        git add .
-        git commit -m "Add artifact"
-        git push
+        # git lfs track ".zip"
+        # git add .
+        # git commit -m "Add artifact"
+        git push origin
