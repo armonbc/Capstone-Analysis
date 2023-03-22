@@ -22,7 +22,7 @@ soup = BeautifulSoup(xml_response.content, 'xml')
 # loop through each object and print its key
 for content in soup.find_all('Contents'):
     key = content.find('Key').text
-    if key and key in ["202210-divvy-tripdata.zip","202211-divvy-tripdata.zip","202212-divvy-tripdata.zip"]:
+    if key and key in ["202301-divvy-tripdata.zip","202302-divvy-tripdata.zip"]:
        file_abs = f"{url}/{key}"
        print(f"Downloading ... {file_abs}")
        
