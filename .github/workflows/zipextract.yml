@@ -27,6 +27,7 @@ jobs:
     - name: Add Files
       run: |
         pwd && ls -la
+        git lfs install
         git lfs track ".zip"
         git add .
         git commit -m "Add artifact"
