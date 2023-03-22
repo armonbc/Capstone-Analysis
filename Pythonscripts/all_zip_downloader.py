@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+import zipfile
 
 # URL of the page containing the table
 url = "https://divvy-tripdata.s3.amazonaws.com"
@@ -21,11 +22,13 @@ soup = BeautifulSoup(xml_response.content, 'xml')
 # loop through each object and print its key
 for content in soup.find_all('Contents'):
     key = content.find('Key').text
-    if key and key.endswith('.zip') and (key.startswith('2022') or key.startswith('2023')):
+    if key and key in "202203-divvy-tripdata.zip":
        file_abs = f"{url}/{key}"
        print(f"Downloading ... {file_abs}")
-       # Download the file to the download directory
-      
+       
+       # Download the file to the download directory      
        with open(os.path.join(download_dir, key), "wb") as f:
           response = requests.get(file_abs)
           f.write(response.content)
+       with zipfile.ZipFile(key, 'r') as zip_ref:
+          zip_ref.extractall(download_dir)
