@@ -1,0 +1,35 @@
+name: Zip File Extraction Operations
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  extraction_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List current dir....
+      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
+    
+    - name: checkout repo content
+      uses: actions/checkout@v3 
+     
+    - name: Extracting Zip Files
+      run: |
+        unzip "../original_zipfiles/*.zip" -d "original_datasets"
+        ls -la "original_datasets"
+    
+    - name: Configure Git
+      env:
+        USER_NAME: ${{secrets.GH_NAME}}
+        USER_MAIL: ${{secrets.GH_EMAIL}} 
+        USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
+        GITHUB_TOKEN: $USER_TOKEN
+      run: |
+        git config --global user.name USER_NAME
+        git config --global user.email USER_MAIL
+    - name: Add Files
+      run: |
+        pwd && ls -la && cp ../original_zipfiles/* "original_zipfiles/"
+        git add original_datasets/*
+        git commit -m "Add zip files"
+        git push
