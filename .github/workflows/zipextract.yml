@@ -15,7 +15,7 @@ jobs:
      
     - name: Extracting Zip Files
       run: |
-        unzip "../original_zipfiles/*.zip" -d "original_datasets"
+        unzip "original_zipfiles/*.zip" -d "original_datasets"
         ls -la "original_datasets"
     
     - name: Configure Git
@@ -29,7 +29,7 @@ jobs:
         git config --global user.email USER_MAIL
     - name: Add Files
       run: |
-        pwd && ls -la && cp ../original_zipfiles/* "original_zipfiles/"
-        git add original_datasets/*
+        pwd && ls -la
+        git add .
         git commit -m "Add zip files"
         git push
