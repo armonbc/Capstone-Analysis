@@ -16,6 +16,7 @@ jobs:
         USER_NAME: ${{secrets.GH_NAME}}
         USER_MAIL: ${{secrets.GH_EMAIL}} 
         USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
+        GH_TOKEN: $USER_TOKEN
       # uses: actions/download-artifact@v2
       # with:
       # name: file.zip
