@@ -32,4 +32,5 @@ jobs:
         pwd && ls -la
         git add .
         git commit -m "Add artifact"
-        git checkout -b new-feature origin/new-feature
+        git checkout -b new-feature
+        git push
