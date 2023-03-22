@@ -15,7 +15,7 @@ jobs:
       
     - name: Extracting Zip Files
       run: |
-        unzip "original_zipfiles/202206-divvy-tripdata.zip" -d "original_datasets/202206-divvy-tripdata/"
+        unzip "original_zipfiles/202207-divvy-tripdata.zip" -d "original_datasets/202207-divvy-tripdata/"
         ls -la "original_datasets/"
     
     - name: Configure Git
@@ -32,8 +32,8 @@ jobs:
         pwd && ls -la
         #git lfs checkout
         #git lfs install
-        git lfs track "original_datasets/202206-divvy-tripdata/202206-divvy-tripdata.csv"
+        git lfs track "original_datasets/202207-divvy-tripdata/202207-divvy-tripdata.csv"
         git add .gitattributes
-        git add original_datasets/202206-divvy-tripdata/202206-divvy-tripdata.csv
+        git add original_datasets/202207-divvy-tripdata/202207-divvy-tripdata.csv
         git commit -m "Extracting zip files to CSV"
         git push origin HEAD:main
