@@ -36,8 +36,8 @@ jobs:
         pwd && ls -la
         #git lfs checkout
         #git lfs install
-        #git lfs track .
+        git lfs track "original_datasets/202205-divvy-tripdata/202205-divvy-tripdata.csv"
         git add .gitattributes
         git add original_datasets/202205-divvy-tripdata/202205-divvy-tripdata.csv
         git commit -m "Extracting zip files to CSV"
-        git push --force
+        git push origin HEAD:main
