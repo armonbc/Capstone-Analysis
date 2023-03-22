@@ -1,1 +1,2 @@
 .zip filter=lfs diff=lfs merge=lfs -text
+original_datasets/202205-divvy-tripdata/202205-divvy-tripdata.csv filter=lfs diff=lfs merge=lfs -text
