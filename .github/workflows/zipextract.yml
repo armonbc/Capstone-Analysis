@@ -15,7 +15,7 @@ jobs:
      
     - name: Extracting Zip Files
       run: |
-        unzip "original_zipfiles/202203-divvy-tripdata.zip" -d "original_datasets/202203-divvy-tripdata/"
+        unzip "original_zipfiles/202204-divvy-tripdata.zip" -d "original_datasets/202204-divvy-tripdata/"
         ls -la "original_datasets/"
     
     - name: Configure Git
