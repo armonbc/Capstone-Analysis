@@ -30,5 +30,3 @@ for content in soup.find_all('Contents'):
        with open(os.path.join(download_dir, key), "wb") as f:
           response = requests.get(file_abs)
           f.write(response.content)
-       with zipfile.ZipFile(key, 'r') as zip_ref:
-          zip_ref.extractall(download_dir)
