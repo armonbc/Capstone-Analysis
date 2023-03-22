@@ -9,17 +9,16 @@ jobs:
     steps:
     - name: checkout repo content
       uses: actions/checkout@v3
-      with:
-        ref: ${{ github.head_ref }}
-        fetch-depth: 0
-    - name: List current dir....
-      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
-    - name: Download Artifact
       env:
         USER_NAME: ${{secrets.GH_NAME}}
         USER_MAIL: ${{secrets.GH_EMAIL}} 
         USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
         GITHUB_TOKEN: $USER_TOKEN
+      with:
+        token: GITHUB_TOKEN
+    - name: List current dir....
+      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
+    - name: Download Artifact
       run: |
         curl -L -H "Authorization:Bearer $USER_TOKEN" -o file.zip "https://api.github.com/repos/armonbc/Capstone-Analysis/actions/artifacts/608956119/zip"
         ls -la
@@ -37,8 +36,5 @@ jobs:
         pwd && ls -la
         git lfs track ".zip"
         git add .
-        git commit -a -m "Add artifact"
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        force_with_lease: true
+        git commit -m "Add artifact"
+        git push
