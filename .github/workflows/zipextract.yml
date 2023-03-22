@@ -8,7 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout repo content
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref }}
+        fetch-depth: 0
     - name: List current dir....
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
     - name: Download Artifact
@@ -33,9 +36,8 @@ jobs:
         pwd && ls -la
         git lfs track ".zip"
         git add .
-        git commit -m "Add artifact"
+        git commit -a -m "Add artifact"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: $GITHUB_TOKEN
-        branch: ${{ github.ref }}
+        force_with_lease: true
