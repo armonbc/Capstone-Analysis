@@ -20,10 +20,6 @@ jobs:
         USER_MAIL: ${{secrets.GH_EMAIL}} 
         USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
         GITHUB_TOKEN: $USER_TOKEN
-      # uses: actions/download-artifact@v2
-      # with:
-      # name: file.zip
-      # path: /original_zipfiles/
       run: |
         curl -L -H "Authorization:Bearer $USER_TOKEN" -o file.zip "https://api.github.com/repos/armonbc/Capstone-Analysis/actions/artifacts/608956119/zip"
         ls -la
