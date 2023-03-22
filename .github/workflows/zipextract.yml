@@ -14,8 +14,6 @@ jobs:
         USER_MAIL: ${{secrets.GH_EMAIL}} 
         USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
         GITHUB_TOKEN: $USER_TOKEN
-      with:
-        token: GITHUB_TOKEN
     - name: List current dir....
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"    
     - name: Download Artifact
