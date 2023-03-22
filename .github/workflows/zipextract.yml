@@ -33,7 +33,7 @@ jobs:
         pwd && ls -la
         # git lfs install
         git lfs migrate info
-        git lfs migrate import --include="*.zip" -y
+        git lfs migrate --fixup --everything
         git lfs track ".zip"
         # git add .
         # git commit -m "Add artifact"
