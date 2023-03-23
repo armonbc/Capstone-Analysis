@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 1. List current dir....
-      run: ls -la
+      run: ls -la && pwd
     
-    - name: checkout repo content
-      run: cd ../ & ls -la
+    - name: chang dir
+      run: cd ../ && ls -la && pwd
     
     - name: 2. List current dir....
-      run: ls -la
+      run: ls -la && pwd
