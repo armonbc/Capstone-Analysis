@@ -47,7 +47,7 @@ jobs:
       id: create_release
       run: |
         pwd && ls -la
-        gh release create v202303 original_datasets/* \
+        gh release create v202303 original_datasets/* --debug \
           --title "Uncleaned Dataset" \
           --notes "Downloaded zip files" \
           --draft false \
