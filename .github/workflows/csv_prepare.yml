@@ -2,8 +2,6 @@ name: 1. Download All CSV Operations
 
 on: 
   workflow_dispatch:
-    tags:
-      - 'v02.2023'
 
 jobs:
   python_job:
@@ -48,7 +46,7 @@ jobs:
     - name: Create Release
       id: create_release
       run: |
-        gh release create ${{ github.ref }} \
+        gh release create v202303 \
           --title "Uncleaned Dataset" \
           --notes "Downloaded zip files" \
           --draft false \
@@ -58,8 +56,7 @@ jobs:
         GITHUB_TOKEN: $GITHUB_TOKEN
     - name: Upload Folder
       run: |
-        gh release upload ${{ github.ref }} original_datasets/* \
-          --repo ${{ github.repository }} \
-          --owner ${{ github.repository_owner }}
+        gh release upload v202303 original_datasets/* \
+          --repo ${{ github.repository }}
       env:
         GITHUB_TOKEN: $GITHUB_TOKEN
