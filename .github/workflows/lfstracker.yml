@@ -7,15 +7,11 @@ jobs:
   lfs_job:
     runs-on: ubuntu-latest
     steps:
-    - name: List current dir....
-      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
+    - name: 1. List current dir....
+      run: ls -la
     
     - name: checkout repo content
-      uses: actions/checkout@v3
+      run: cd ../ & ls -la
     
-    - name: Retain only 100mb+ files on LFS
-      run: |
-        git lfs untrack '*.csv'
-        git rm --cached '*.csv'
-        git add *.yml
-        git commit -m "restore"
+    - name: 2. List current dir....
+      run: ls -la
