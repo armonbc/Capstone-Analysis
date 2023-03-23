@@ -46,7 +46,7 @@ jobs:
     - name: Create Release
       id: create_release
       run: |
-        gh release create v202303 \
+        gh release create v202303 original_datasets/* \
           --title "Uncleaned Dataset" \
           --notes "Downloaded zip files" \
           --draft false \
