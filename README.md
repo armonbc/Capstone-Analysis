@@ -1,3 +1,8 @@
+#### Overview:
+- Ridedable Types Comparison (Monthly Basis)
+![alt text](https://github.com/armonbc/Capstone-Analysis/blob/main/cleaned_graphs/rt_by_month.png?raw=true)
+
+
 #### Dataset Scope:
 - 2022-03-01 to 2023-02-28
 
