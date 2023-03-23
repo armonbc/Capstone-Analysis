@@ -15,7 +15,7 @@ jobs:
     
     - name: Retain only 100mb+ files on LFS
       run: |
-        git lfs untrack '.csv'
-        git rm --cached '.csv'
+        git lfs untrack '*.csv'
+        git rm --cached '*.csv'
         git add *.yml
         git commit -m "restore"
