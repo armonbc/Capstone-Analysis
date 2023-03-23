@@ -32,7 +32,7 @@ jobs:
       
     - name: Unzip Files
       run: |
-        unzip "original_zipfiles/*.zip" -d "original_datasets"
+        unzip "original_zipfiles/*.zip" "*.csv" -d "original_datasets"
         ls -la "original_zipfiles/"
     
     - name: Configure Git
