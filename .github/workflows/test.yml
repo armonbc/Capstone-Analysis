@@ -1,16 +1,16 @@
-name: LFS Tracking Operations
+name: Testing Only
 
 on: 
   workflow_dispatch:
 
 jobs:
-  lfs_job:
+  test_job:
     runs-on: ubuntu-latest
     steps:
     - name: 1. List current dir....
       run: ls -la && pwd
     
-    - name: chang dir
+    - name: chang directory
       run: cd ../ && ls -la && pwd
     
     - name: 2. List current dir....
