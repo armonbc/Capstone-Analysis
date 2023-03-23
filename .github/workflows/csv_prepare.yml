@@ -46,11 +46,12 @@ jobs:
     - name: Create Release
       id: create_release
       run: |
+        pwd && ls -la
         gh release create v202303 original_datasets/* \
           --title "Uncleaned Dataset" \
           --notes "Downloaded zip files" \
           --draft false \
-          --prerelease false \
+          --prerelease true \
           --repo ${{ github.repository }}
       env:
         GITHUB_TOKEN: $GITHUB_TOKEN
