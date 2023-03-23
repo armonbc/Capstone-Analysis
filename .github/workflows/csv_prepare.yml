@@ -1,0 +1,66 @@
+name: 1. Download All CSV Operations
+
+on: 
+  workflow_dispatch:
+    tags:
+      - 'v02.2023'
+
+jobs:
+  python_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List current dir....
+      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
+    
+    - name: checkout repo content
+      uses: actions/checkout@v2 # checkout the repository content
+
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' # install the python version needed
+
+    - name: Install python packages....
+      run: |
+          python -m pip install --upgrade pip
+          pip3 install bs4 requests lxml
+          sudo apt install clang
+
+    - name: Executing Python....
+      run: |
+          cd Pythonscripts && python3 all_zip_downloader.py
+      
+    - name: Unzip Files
+      run: |
+        unzip "original_zipfiles/*.zip" -d "original_datasets"
+        ls -la "original_zipfiles/"
+    
+    - name: Configure Git
+      env:
+        USER_NAME: ${{secrets.GH_NAME}}
+        USER_MAIL: ${{secrets.GH_EMAIL}} 
+        USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
+        GITHUB_TOKEN: $USER_TOKEN
+      run: |
+        git config --global user.name USER_NAME
+        git config --global user.email USER_MAIL
+    
+        - name: Create Release
+      id: create_release
+      run: |
+        gh release create ${{ github.ref }} \
+          --title "Uncleaned Dataset" \
+          --notes "Downloaded zip files" \
+          --draft false \
+          --prerelease false \
+          --repo ${{ github.repository }} \
+          --owner ${{ github.repository_owner }}
+      env:
+        GITHUB_TOKEN: $GITHUB_TOKEN
+    - name: Upload Folder
+      run: |
+        gh release upload ${{ github.ref }} original_datasets/* \
+          --repo ${{ github.repository }} \
+          --owner ${{ github.repository_owner }}
+      env:
+        GITHUB_TOKEN: $GITHUB_TOKEN
