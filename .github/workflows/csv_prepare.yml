@@ -31,14 +31,15 @@ jobs:
     - name: Unzip Files
       run: |
         unzip "original_zipfiles/*.zip" "*.csv" -d "original_datasets"
-        ls -la "original_zipfiles/"
+        zip original_datasets.zip original_datasets
+        ls -la "original_datasets"
 
     - name: Create Release
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          original_datasets/*
+          original_datasets.zip
         tag_name: v2023.03.01.Uncleaned_Datasets
         name: Uncleaned Datasets (2022-02 to 2023-03)
         body: |
