@@ -40,6 +40,6 @@ jobs:
 
     - name: Upload Git
       run: |
-        git .
+        git add .
         git commit -m "Add bar chart"
         git push
