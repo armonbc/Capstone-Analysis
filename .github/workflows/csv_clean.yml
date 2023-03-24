@@ -17,7 +17,7 @@ jobs:
       run: |
         wget -O Uncleaned_Datasets.zip https://github.com/armonbc/Capstone-Analysis/releases/download/v2023.03.01.Uncleaned_Datasets/original_datasets.zip
         pwd && ls -la
-        unzip "Uncleaned_Datasets.zip" "*.csv" -d "original_datasets"
+        unzip "Uncleaned_Datasets.zip" "*.csv"
         pwd && ls -la "original_datasets/"
     
     - name: Cache R Packages
@@ -35,8 +35,7 @@ jobs:
 
     - name: Cleaning CSV files
       run: |
-        cd "Rscripts" && Rscript dataset_sortfilterlog.R
-        zip -r cleaned_datasets.zip cleaned_datasets
+        cd "Rscripts" && Rscript dataset_sortfilterlog.R && zip -r cleaned_datasets.zip cleaned_datasets
 
     - name: Create Release
       id: create_release
