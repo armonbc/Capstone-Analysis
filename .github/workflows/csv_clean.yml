@@ -18,12 +18,19 @@ jobs:
         wget -O Uncleaned_Datasets.zip https://github.com/armonbc/Capstone-Analysis/archive/refs/tags/v2023.03.01.Uncleaned_Datasets.zip
         unzip Uncleaned_Datasets.zip -d "original_datasets"
         ls -la "original_datasets/"
- 
+    
+    - name: Cache R Packages
+      uses: actions/cache@v2
+      with:
+        path: /usr/local/lib/R/site-library
+        key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
+        restore-keys: |
+          ${{ runner.os }}-r-
+    
     - name: Install R and its Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install r-base
-        Rscript -e 'install.packages(c("ggplot2"))'
+        sudo apt-get install r-base r-cran-ggplot2 r-cran-dplyr
 
     - name: Cleaning CSV files
       run: |
