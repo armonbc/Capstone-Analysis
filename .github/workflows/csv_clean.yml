@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker://ubuntu:latest
-      options: --mount type=cache,target=/var/cache/apt
+      volumes:
+        - /var/cache/apt:/var/cache/apt
 
     steps:
     - name: List current dir....
