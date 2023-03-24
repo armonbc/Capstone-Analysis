@@ -6,11 +6,6 @@ on:
 jobs:
   rscript_job:
     runs-on: ubuntu-latest
-    container:
-      image: docker://ubuntu:latest
-      volumes:
-        - /var/cache/apt:/var/cache/apt
-
     steps:
   
     - name: checkout repo content
