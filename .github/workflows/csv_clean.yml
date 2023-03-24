@@ -6,6 +6,10 @@ on:
 jobs:
   rscript_job:
     runs-on: ubuntu-latest
+    container:
+      image: docker://ubuntu:latest
+      options: --mount type=cache,target=/var/cache/apt
+
     steps:
     - name: List current dir....
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
@@ -23,13 +27,10 @@ jobs:
     - name: Cache R Packages
       uses: actions/cache@v3
       with:
-        path: |
-          /usr/local/lib/R/site-library \
-          $PATH
-        key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
-        restore-keys: |
-          ${{ runner.os }}-r-
-          always
+        path: /usr/lib/R/site-library/
+        key: ${{ runner.os }}-cran-packages-${{ hashFiles('/usr/share/doc/r-base/') }}
+        restore-keys: ${{ runner.os }}-cran-packages-
+        cache-name: cache-apt
     
     - name: Install R and its Dependencies
       run: |
