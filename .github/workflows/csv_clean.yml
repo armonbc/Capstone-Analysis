@@ -12,11 +12,12 @@ jobs:
         - /var/cache/apt:/var/cache/apt
 
     steps:
+  
+    - name: checkout repo content
+      uses: actions/checkout@v3 # checkout the repository content
+  
     - name: List current dir....
       run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
-    
-    - name: checkout repo content
-      uses: actions/checkout@v2 # checkout the repository content
   
     - name: Unzip Files
       run: |
