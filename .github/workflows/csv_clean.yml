@@ -17,7 +17,7 @@ jobs:
       run: |
         wget -O Uncleaned_Datasets.zip https://github.com/armonbc/Capstone-Analysis/archive/refs/tags/v2023.03.01.Uncleaned_Datasets.zip
         pwd && ls -la
-        unzip -j "Uncleaned_Datasets.zip" "*.csv" -d "original_datasets"
+        unzip "Uncleaned_Datasets.zip" -d "original_datasets"
         pwd && ls -la "original_datasets/"
     
     - name: Cache R Packages
