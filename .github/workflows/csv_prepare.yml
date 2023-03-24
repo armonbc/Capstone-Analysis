@@ -35,15 +35,16 @@ jobs:
 
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
+      uses: softprops/action-gh-release@v1
       with:
-          tag_name: v2023.03.01.Uncleaned_Datasets
-          release_name: Uncleaned Datasets (2022-02 to 2023-03)
-          body: |
-            This is the first release of our project.
-            It includes several new features and bug fixes.
-          draft: false
-          prerelease: true
-          path: original_datasets
+        files: |
+          original_datasets/*
+        tag_name: v2023.03.01.Uncleaned_Datasets
+        name: Uncleaned Datasets (2022-02 to 2023-03)
+        body: |
+          This is the first release of our project.
+          It includes several new features and bug fixes.
+        prerelease: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
+
