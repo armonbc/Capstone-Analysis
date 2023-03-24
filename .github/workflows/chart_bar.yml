@@ -38,6 +38,16 @@ jobs:
       run: |
         cd "Rscripts" && Rscript dataset_cleaned_barchart1.R
 
+    - name: Configure Git
+      env:
+        USER_NAME: ${{secrets.GH_NAME}}
+        USER_MAIL: ${{secrets.GH_EMAIL}} 
+        USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
+        GITHUB_TOKEN: $USER_TOKEN
+      run: |
+        git config --global user.name USER_NAME
+        git config --global user.email USER_MAIL
+
     - name: Upload Git
       run: |
         git add .
