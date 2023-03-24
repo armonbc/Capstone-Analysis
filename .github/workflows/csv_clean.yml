@@ -23,7 +23,9 @@ jobs:
     - name: Cache R Packages
       uses: actions/cache@v2
       with:
-        path: /usr/local/lib/R/site-library
+        path: |
+          /usr/local/lib/R/site-library
+          $PATH
         key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
         restore-keys: |
           ${{ runner.os }}-r-
