@@ -27,6 +27,7 @@ jobs:
         key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
         restore-keys: |
           ${{ runner.os }}-r-
+          always
     
     - name: Install R and its Dependencies
       run: |
@@ -35,7 +36,7 @@ jobs:
 
     - name: Cleaning CSV files
       run: |
-        cd "Rscripts" && Rscript dataset_sortfilterlog.R && zip -r cleaned_datasets.zip cleaned_datasets
+        cd "Rscripts" && Rscript dataset_sortfilterlog.R && zip -r ../cleaned_datasets.zip ../cleaned_datasets
 
     - name: Create Release
       id: create_release
