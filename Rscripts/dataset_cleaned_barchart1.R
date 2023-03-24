@@ -35,4 +35,4 @@ final_plot <- merged_data %>%
        x = "Month",
        y = "Proportion",
        fill = "Rideable Type")
-ggsave("rt_by_month.png", final_plot, width = 8, height = 6, dpi = 300)
+ggsave("rt_by_month.png", final_plot, width = 8, height = 6)
