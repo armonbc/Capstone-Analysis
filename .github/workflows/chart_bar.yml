@@ -21,12 +21,12 @@ jobs:
         unzip -j "Cleaned_Datasets.zip" "*.csv"
         pwd && ls -la "cleaned_datasets/"
     
-    - name: Cache R Packages
-      uses: actions/cache@v3
-      with:
-        path: /usr/lib/R/site-library/
-        key: ${{ runner.os }}-cran-packages-${{ hashFiles('/usr/share/doc/r-base/') }}
-        restore-keys: ${{ runner.os }}-cran-packages-
+    #- name: Cache R Packages
+    #  uses: actions/cache@v3
+    #  with:
+    #    path: /usr/lib/R/site-library/
+    #    key: ${{ runner.os }}-cran-packages-${{ hashFiles('/usr/share/doc/r-base/') }}
+    #    restore-keys: ${{ runner.os }}-cran-packages-
     
     - name: Install R and its Dependencies
       run: |
