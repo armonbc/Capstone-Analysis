@@ -18,7 +18,13 @@ jobs:
         wget -O Uncleaned_Datasets.zip https://github.com/armonbc/Capstone-Analysis/archive/refs/tags/v2023.03.01.Uncleaned_Datasets.zip
         unzip Uncleaned_Datasets.zip -d "original_datasets"
         ls -la "original_datasets/"
-    
+ 
+    - name: Install R and its Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install r-base
+        Rscript -e 'install.packages(c("ggplot2"))'
+
     - name: Cleaning CSV files
       run: |
         cd "Rscripts" && Rscript dataset_sortfilterlog.R
