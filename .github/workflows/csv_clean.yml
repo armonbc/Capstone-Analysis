@@ -21,10 +21,10 @@ jobs:
         pwd && ls -la "original_datasets/"
     
     - name: Cache R Packages
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: |
-          /usr/local/lib/R/site-library
+          /usr/local/lib/R/site-library \
           $PATH
         key: ${{ runner.os }}-r-${{ hashFiles('**/DESCRIPTION') }}
         restore-keys: |
