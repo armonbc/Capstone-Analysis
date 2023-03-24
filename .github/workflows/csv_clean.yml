@@ -33,6 +33,10 @@ jobs:
         wget -O Uncleaned_Datasets.zip https://github.com/armonbc/Capstone-Analysis/archive/refs/tags/v2023.03.01.Uncleaned_Datasets.zip
         unzip Uncleaned_Datasets.zip -d "original_datasets"
         ls -la "original_datasets/"
+    
+    - name: Cleaning CSV files
+      run: |
+        cd "original_datasets" && Rscript dataset_sortfilterlog.R
 
     - name: Create Release
       id: create_release
