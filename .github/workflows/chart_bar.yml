@@ -33,7 +33,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install r-base r-cran-ggplot2 r-cran-dplyr r-cran-tidyr r-cran-readr r-cran-tibble r-cran-stringr r-cran-forcats r-cran-purrr r-cran-httr r-cran-jsonlite r-cran-lubridate r-cran-xml2 r-cran-rlang r-cran-lazyeval r-cran-broom r-cran-modelr r-cran-ggthemes r-cran-farver r-cran-labeling r-cran-munsell r-cran-plyr r-cran-scales r-cran-colorspace r-cran-viridis r-cran-gtable r-cran-gridextra r-cran-cowplot r-cran-ggrepel r-cran-ggpubr r-cran-tidyverse
     
-        - name: Cleaning CSV files
+    - name: Cleaning CSV files
       run: |
         cd "Rscripts" && Rscript dataset_cleaned_barchart1.R
 
