@@ -45,19 +45,14 @@ jobs:
     
     - name: Create Release
       id: create_release
-      run: |
-        pwd && ls -la
-        gh release create original_datasets \
-          --title "Uncleaned Dataset" \
-          --notes "Downloaded zip files" \
-          --draft false \
-          --prerelease true \
-          --repo ${{ github.repository }}
+      uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: $GITHUB_TOKEN
-    - name: Upload Folder
-      run: |
-        gh release upload original_datasets \
-          --repo ${{ github.repository }}
-      env:
-        GITHUB_TOKEN: $GITHUB_TOKEN
+      with:
+          tag_name: v1.0.0
+          release_name: Release 1.0.0
+          body: |
+            This is the first release of our project.
+            It includes several new features and bug fixes.
+            draft: false
+            prerelease: true
