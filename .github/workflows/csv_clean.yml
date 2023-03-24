@@ -15,7 +15,7 @@ jobs:
   
     - name: Unzip Files
       run: |
-        wget -O Uncleaned_Datasets.zip https://github.com/armonbc/Capstone-Analysis/archive/refs/tags/v2023.03.01.Uncleaned_Datasets.zip
+        wget -O Uncleaned_Datasets.zip https://github.com/armonbc/Capstone-Analysis/releases/download/v2023.03.01.Uncleaned_Datasets/original_datasets.zip
         pwd && ls -la
         unzip "Uncleaned_Datasets.zip" -d "original_datasets"
         pwd && ls -la "original_datasets/"
