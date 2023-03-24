@@ -31,8 +31,8 @@ jobs:
     - name: Unzip Files
       run: |
         unzip "original_zipfiles/*.zip" "*.csv" -d "original_datasets"
-        zip original_datasets.zip original_datasets
-        ls -la "original_datasets"
+        zip -r original_datasets.zip original_datasets
+        ls -la "original_datasets/"
 
     - name: Create Release
       id: create_release
