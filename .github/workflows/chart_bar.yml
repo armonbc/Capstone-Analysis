@@ -50,6 +50,6 @@ jobs:
 
     - name: Upload Git
       run: |
-        git add .
+        git add cleaned_datasets/*.pdf
         git commit -m "Add bar chart"
         git push origin HEAD:main
