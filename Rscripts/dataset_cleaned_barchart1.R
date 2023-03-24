@@ -35,4 +35,4 @@ final_plot <- merged_data %>%
        x = "Month",
        y = "Proportion",
        fill = "Rideable Type")
-ggsave("rt_by_month.pdf", final_plot, width = 8, height = 6)
+ggsave("../cleaned_graphs/rt_by_month.pdf", final_plot, width = 8, height = 6)
