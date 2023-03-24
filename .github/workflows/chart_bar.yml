@@ -19,7 +19,7 @@ jobs:
         wget -O Cleaned_Datasets.zip https://github.com/armonbc/Capstone-Analysis/releases/download/v2023.03.01.Cleaned_Datasets/cleaned_datasets.zip
         pwd && ls -la
         unzip "Cleaned_Datasets.zip" "*.csv"
-        pwd && ls -la "original_datasets/"
+        pwd && ls -la "cleaned_datasets/"
     
     - name: Cache R Packages
       uses: actions/cache@v3
