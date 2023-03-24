@@ -18,11 +18,11 @@ filechecker <- function() {
 checking <- filechecker()
 for (file_name in file_names) {
   current_full_path <- normalizePath(file_name)
-  #csv_data <- read.csv(current_full_path)
-  #csv_data2 <- csv_data %>%
-  #select(rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual) %>%
-  #filter_all(all_vars(!is.na(.) & !(. %in% c("", " ")))) %>%
-  #arrange(started_at)
+  csv_data <- read.csv(current_full_path)
+  csv_data2 <- csv_data %>%
+  select(rideable_type, started_at, ended_at, start_station_name, end_station_name, start_lat, start_lng, end_lat, end_lng, member_casual) %>%
+  filter_all(all_vars(!is.na(.) & !(. %in% c("", " ")))) %>%
+  arrange(started_at)
   cat(current_full_path)
   cat("\n\n")
   # Construct new file path
@@ -31,7 +31,7 @@ for (file_name in file_names) {
     dir.create(dirname(new_path))
   }
   create_log(message = "Filtered & Sorted file", file_path = new_path)
-  #write.csv(csv_data2, new_path, row.names = FALSE)
+  write.csv(csv_data2, new_path, row.names = FALSE)
   cat(new_path)
   cat("\n\n\n\n\n")
 }
