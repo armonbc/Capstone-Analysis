@@ -68,5 +68,5 @@ jobs:
       run: |
         git checkout -b temp_branch
         git add Logs
-        git commit -m "Add bar chart"
+        git commit -m "Cleaning csv"
         git push origin HEAD:temp_branch
