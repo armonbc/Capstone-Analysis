@@ -15,6 +15,6 @@ jobs:
         extra-packages: |
           any::ggplot2
           any::rcmdcheck
-    needs: |
-        website
-        coverage
+        needs: |
+          website
+          coverage
