@@ -33,6 +33,7 @@ jobs:
         unzip "original_zipfiles/*.zip" "*.csv" -d "original_datasets"
         zip -r original_datasets.zip original_datasets
         ls -la "original_datasets/"
+        cd Rscripts && Rscript dataset_prepare.R
 
     - name: Create Release
       id: create_release
