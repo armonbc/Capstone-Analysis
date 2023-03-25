@@ -1,2 +1,14 @@
 timestamp,datetime,timezone,message,filepath,user,os_platform
 1679711704433.36,2023-03-25 02:35:04 AM,,Downloading Zip (CSV),/home/runner/work/Capstone-Analysis/Capstone-Analysis/Rscripts,runner,Linux/x86_64
+1679712516128.8955,2023-03-25 02:48:36 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202203-divvy-tripdata.csv,runner,Linux/x86_64
+1679712529786.9446,2023-03-25 02:48:49 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202204-divvy-tripdata.csv,runner,Linux/x86_64
+1679712552403.1855,2023-03-25 02:49:12 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202205-divvy-tripdata.csv,runner,Linux/x86_64
+1679712580230.754,2023-03-25 02:49:40 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202206-divvy-tripdata.csv,runner,Linux/x86_64
+1679712608380.1458,2023-03-25 02:50:08 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202207-divvy-tripdata.csv,runner,Linux/x86_64
+1679712637784.7075,2023-03-25 02:50:37 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202208-divvy-tripdata.csv,runner,Linux/x86_64
+1679712662105.0923,2023-03-25 02:51:02 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202209-divvy-publictripdata.csv,runner,Linux/x86_64
+1679712682681.5134,2023-03-25 02:51:22 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202210-divvy-tripdata.csv,runner,Linux/x86_64
+1679712693898.0522,2023-03-25 02:51:33 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202211-divvy-tripdata.csv,runner,Linux/x86_64
+1679712700200.7114,2023-03-25 02:51:40 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202212-divvy-tripdata.csv,runner,Linux/x86_64
+1679712707253.1611,2023-03-25 02:51:47 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202301-divvy-tripdata.csv,runner,Linux/x86_64
+1679712712617.0957,2023-03-25 02:51:52 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202302-divvy-tripdata.csv,runner,Linux/x86_64
