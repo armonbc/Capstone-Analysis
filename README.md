@@ -1,4 +1,16 @@
-<hr style="border:1px solid gray">
+<p align="center">
+  <img src="icons8-github-750.png" alt="AndroidIDE" width="80" height="80"/>
+</p>
+
+<h2 align="center"><b>Cyclistic Data Analysis</b></h2>
+<p align="center">
+  A 12-year in-depth analysis of Cyclistic Case Study for the period March of 2022 to Feb of 2023.
+<p>
+<p align="center">
+  <a target="_blank" href="https://icons8.com/icon/LoL4bFzqmAa0/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> &nbsp; &#8226; &nbsp;
+  <a href="https://github.com/armonbc/Capstone-Analysis/wiki">Full Analysis</a> &nbsp; &#8226; &nbsp;
+  <a href="https://www.facebook.com/profile.php?id=100082066580204&mibextid=ZbWKwL">Message us on Facebook</a>
+</p>
 
 #### License
 - The Logs, Rscripts, and Python code in this repo are licensed under <b>MIT License</b>
