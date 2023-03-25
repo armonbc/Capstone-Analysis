@@ -1,5 +1,11 @@
 <hr style="border:2px solid gray">
 
+#### License
+- The Logs, Rscripts, and Python code in this repo are licensed under <b>MIT License</b>
+`https://github.com/armonbc/Capstone-Analysis/blob/main/LICENSE.md`
+
+<hr style="border:2px solid gray">
+
 ##### Automation Workflow Status
 | Operations | Status |
 | --------- | ------ |
@@ -8,6 +14,8 @@
 | 3. Bar Chart Creation | [![3. Bar Chart Creation](https://github.com/armonbc/Capstone-Analysis/actions/workflows/chart_bar.yml/badge.svg)](https://github.com/armonbc/Capstone-Analysis/actions/workflows/chart_bar.yml) |
 | 4. Dashboard Creation | [![4. Dashboard Creation](https://github.com/armonbc/Capstone-Analysis/actions/workflows/chart_bar.yml/badge.svg)](https://github.com/armonbc/Capstone-Analysis/actions/workflows/chart_bar.yml) |
 | 5. Reports Creation | [![5. Reports Creation](https://github.com/armonbc/Capstone-Analysis/actions/workflows/chart_bar.yml/badge.svg)](https://github.com/armonbc/Capstone-Analysis/actions/workflows/chart_bar.yml) |
+
+<hr style="border:2px solid gray">
 
 #### Overview:
 - Ridedable Types Comparison (Monthly Basis)
