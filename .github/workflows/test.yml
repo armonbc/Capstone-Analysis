@@ -7,8 +7,8 @@ jobs:
   test_job:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: r-lib/actions/setup-r@v1
+    - name: Checking out repo
+      uses: actions/checkout@v3
     - name: Cache dependencies
       uses: r-lib/actions/setup-pkgdown@v1
       with:
