@@ -7,34 +7,14 @@ jobs:
   test_job:
     runs-on: ubuntu-latest
     steps:
-    - name: Checking out repo
-      uses: actions/checkout@v3
-    - name: Install R Cran dep
-      run: |
-        sudo apt-get update
-        sudo apt-get install r-base r-cran-ggplot2 r-cran-dplyr r-cran-tidyr r-cran-readr r-cran-tibble r-cran-stringr r-cran-forcats r-cran-purrr r-cran-httr r-cran-jsonlite r-cran-lubridate r-cran-xml2 r-cran-rlang r-cran-lazyeval r-cran-broom r-cran-modelr r-cran-ggthemes r-cran-farver r-cran-labeling r-cran-munsell r-cran-plyr r-cran-scales r-cran-colorspace r-cran-viridis r-cran-gtable r-cran-gridextra r-cran-cowplot r-cran-ggrepel r-cran-ggpubr r-cran-tidyverse
-    
-    - name: Set RENV_PATHS_ROOT
-      shell: bash
-      run: |
-        echo "RENV_PATHS_ROOT=${{ runner.temp }}/renv" >> $GITHUB_ENV
-    - name: Install and activate renv
-      run: |
-        install.packages("renv")
-        renv::activate()
-      shell: Rscript {0}
-    - name: Get R and OS version
-      id: get-version
-      run: |
-        cat("##[set-output name=os-version;]", sessionInfo()$running, "\n", sep = "")
-        cat("##[set-output name=r-version;]", R.Version()$version.string, sep = "")
-      shell: Rscript {0}
-    - name: Restore Renv package cache
-      uses: actions/cache@v3
+    - uses: actions/checkout@v3
+    - uses: r-lib/actions/setup-r@v2
+    - uses: r-lib/actions/setup-r-dependencies@v2
       with:
-        path: ${{ env.RENV_PATHS_ROOT }}
-        key: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{ inputs.cache-version }}-${{ hashFiles('renv.lock') }}
-        restore-keys: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-
-    - name: Running Rscript
-      run: |
-        cd Rscripts && Rscript dataset_prepare.R
+        cache-version: 2
+        extra-packages: |
+          any::ggplot2
+          any::rcmdcheck
+    needs: |
+        website
+        coverage
