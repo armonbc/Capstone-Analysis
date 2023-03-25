@@ -51,6 +51,6 @@ jobs:
     - name: Upload Git
       run: |
         git checkout -b temp_branch
-        git add cleaned_graphs
+        git add cleaned_graphs Logs
         git commit -m "Add bar chart"
         git push origin HEAD:temp_branch
