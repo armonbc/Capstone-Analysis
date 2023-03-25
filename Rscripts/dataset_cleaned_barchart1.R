@@ -4,6 +4,8 @@ library(ggplot2)
 library(lubridate)
 library(scales)
 library(magrittr)
+source("dataset_logger.R")
+
 # Set the path to your CSV file
 file_paths <- c("../cleaned_datasets/202212-divvy-tripdata.csv", 
                 "../cleaned_datasets/202301-divvy-tripdata.csv", 
@@ -35,4 +37,6 @@ final_plot <- merged_data %>%
        x = "Month",
        y = "Proportion",
        fill = "Rideable Type")
-ggsave("../cleaned_graphs/rt_by_month.pdf", final_plot, width = 8, height = 6)
+image_path <- "../cleaned_graphs/rt_by_month.pdf"
+ggsave(image_path, final_plot, width = 8, height = 6)
+create_log(message = "Creating bar chart...", file_path = image_path)
