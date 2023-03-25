@@ -9,6 +9,8 @@ jobs:
     steps:
     - name: Checking out repo
       uses: actions/checkout@v3
+    - name: Install R
+      run: sudo apt install r-base
     - name: Set RENV_PATHS_ROOT
       shell: bash
       run: |
