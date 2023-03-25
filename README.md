@@ -7,10 +7,11 @@
   A 12-year in-depth analysis of Cyclistic Case Study for the period March of 2022 to Feb of 2023.
 <p>
 <p align="center">
-  <a target="_blank" href="https://icons8.com/icon/LoL4bFzqmAa0/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> &nbsp; &#8226; &nbsp;
+  <a target="_blank" href="https://icons8.com/icon/LoL4bFzqmAa0/github">GitHub Icon</a> &nbsp; &#8226; &nbsp;
   <a href="https://github.com/armonbc/Capstone-Analysis/wiki">Full Analysis</a> &nbsp; &#8226; &nbsp;
-  <a href="https://www.facebook.com/profile.php?id=100082066580204&mibextid=ZbWKwL">Message us on Facebook</a>
+  <a href="https://github.com/armonbc/Capstone-Analysis/actions">(CI/CD) Automation Workflow</a>
 </p>
+<br>
 
 #### License
 - The Logs, Rscripts, and Python code in this repo are licensed under <b>MIT License</b>
