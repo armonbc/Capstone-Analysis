@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icons8-github-750.png" alt="AndroidIDE" width="80" height="80"/>
+  <img src="cyclistic-bike-share-icon.png" alt="Cyclistic Bike-Share | Github Action | CI/CD Pipelines | Advanced Google Data Analytics Program Certificate" width="80" height="80"/>
 </p>
 
 <h2 align="center"><b>Cyclistic Data Analysis</b></h2>
@@ -7,7 +7,7 @@
   A 12-year in-depth analysis of Cyclistic Case Study for the period March of 2022 to Feb of 2023.
 <p>
 <p align="center">
-  <a target="_blank" href="https://icons8.com/icon/LoL4bFzqmAa0/github">GitHub Icon</a> &nbsp; &#8226; &nbsp;
+  <a href="https://github.com/armonbc/Capstone-Analysis/releases">Data Releases</a> &nbsp; &#8226; &nbsp;
   <a href="https://github.com/armonbc/Capstone-Analysis/wiki">Full Analysis</a> &nbsp; &#8226; &nbsp;
   <a href="https://github.com/armonbc/Capstone-Analysis/actions">(CI/CD) Automation Workflow</a>
 </p>
