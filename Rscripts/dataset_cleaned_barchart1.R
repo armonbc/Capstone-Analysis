@@ -37,6 +37,6 @@ final_plot <- merged_data %>%
        x = "Month",
        y = "Proportion",
        fill = "Rideable Type")
-image_path <- "../cleaned_graphs/rt_by_month.pdf"
+image_path <- normalizePath("../cleaned_graphs/rt_by_month.pdf")
 ggsave(image_path, final_plot, width = 8, height = 6)
-create_log(message = "Creating bar chart...", file_path = image_path)
+create_log(message = "Creating bar chart", file_path = image_path)
