@@ -1,0 +1,2 @@
+timestamp,datetime,timezone,message,filepath,user,os_platform
+1679711704433.36,2023-03-25 02:35:04 AM,,Downloading Zip (CSV),/home/runner/work/Capstone-Analysis/Capstone-Analysis/Rscripts,runner,Linux/x86_64
