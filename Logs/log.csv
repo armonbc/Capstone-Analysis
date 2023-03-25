@@ -12,3 +12,4 @@ timestamp,datetime,timezone,message,filepath,user,os_platform
 1679712700200.7114,2023-03-25 02:51:40 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202212-divvy-tripdata.csv,runner,Linux/x86_64
 1679712707253.1611,2023-03-25 02:51:47 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202301-divvy-tripdata.csv,runner,Linux/x86_64
 1679712712617.0957,2023-03-25 02:51:52 AM,,Filtered & Sorted file,/home/runner/work/Capstone-Analysis/Capstone-Analysis/cleaned_datasets/202302-divvy-tripdata.csv,runner,Linux/x86_64
+1679713050334.8025,2023-03-25 02:57:30 AM,,Creating bar chart...,../cleaned_graphs/rt_by_month.pdf,runner,Linux/x86_64
