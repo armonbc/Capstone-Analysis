@@ -17,9 +17,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: |
-          /usr/lib/R/site-library/ \
-          /usr/local/lib/R/site-library \
-          /usr/lib/R/library          
+          /usr/lib/R/site-library/tidyverse
         key: ${{ runner.os }}-cran-packages-${{ hashFiles('/usr/share/doc/r-base/') }}
         restore-keys: ${{ runner.os }}-cran-packages-
     - name: Test R
