@@ -20,12 +20,11 @@ jobs:
           /usr/lib/R/site-library/tidyverse
         key: ${{ runner.os }}-cran-packages-${{ hashFiles('/usr/share/doc/r-base/') }}
         restore-keys: ${{ runner.os }}-cran-packages-
-    - name: Test R
-      run: |
-        cd Rscripts && Rscript dataset_prepare.R
-    
-    #- name: Install R and its Dependencies
+    #- name: Test R
     #  run: |
-    #    sudo apt-get update
-    #    sudo apt-get install r-base r-cran-ggplot2 r-cran-dplyr r-cran-tidyr r-cran-readr r-cran-tibble r-cran-stringr r-cran-forcats r-cran-purrr r-cran-httr r-cran-jsonlite r-cran-lubridate r-cran-xml2 r-cran-rlang r-cran-lazyeval r-cran-broom r-cran-modelr r-cran-ggthemes r-cran-farver r-cran-labeling r-cran-munsell r-cran-plyr r-cran-scales r-cran-colorspace r-cran-viridis r-cran-gtable r-cran-gridextra r-cran-cowplot r-cran-ggrepel r-cran-ggpubr r-cran-tidyverse
+    #    cd Rscripts && Rscript dataset_prepare.R
+    
+    - name: Install R and its Dependencies
+      run: |
+        sudo apt-get install r-cran-tidyverse
     
