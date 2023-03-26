@@ -34,7 +34,9 @@ jobs:
          sudo apt-get install r-base r-base-core r-cran-tidyverse
    
     - name: List current dir....
-      run: ls -la "/usr/local/lib/R/site-library"
+      run: |
+        ls -la "/usr/local/lib/R/site-library"
+        which R && whoami
       
     - name: Test R
       run: |
