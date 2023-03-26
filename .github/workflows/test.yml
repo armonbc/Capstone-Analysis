@@ -12,7 +12,10 @@ jobs:
       uses: actions/checkout@v3 # checkout the repository content
   
     - name: List current dir....
-      run: ls -la "/usr/local/lib/R/site-library"
+      run: |
+        ls -la "/usr/local/lib/R/site-library"
+        which R && whoami
+    
     - name: Removing existing R
       run: |
          sudo apt-get remove r-base-core
@@ -36,6 +39,7 @@ jobs:
     - name: List current dir....
       run: |
         ls -la "/usr/local/lib/R/site-library"
+        ls -la "/usr/local/lib/R/"
         which R && whoami
       
     - name: Test R
