@@ -34,7 +34,7 @@ jobs:
     
     - name: Install R and its Dependencies
       run: |
-         apt-get install r-base r-base-core r-cran-tidyverse
+         sudo apt-get install r-base r-base-core r-cran-tidyverse
    
     - name: List current dir....
       run: |
