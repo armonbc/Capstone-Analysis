@@ -18,12 +18,12 @@ jobs:
     
     - name: Removing existing R
       run: |
-         sudo apt-get remove r-base-core
-         sudo apt-get remove r-base
-         sudo apt-get autoremove
-         sudo rm -rf /usr/local/lib/R/site-library
-         sudo rm -rf /usr/lib/R/site-library
-         sudo rm -rf /usr/lib/R/library
+         apt-get remove r-base-core
+         apt-get remove r-base
+         apt-get autoremove
+         rm -rf /usr/local/lib/R/site-library
+         rm -rf /usr/lib/R/site-library
+         rm -rf /usr/lib/R/library
     - name: Cache R Packages
       uses: actions/cache@v3
       with:
@@ -34,7 +34,7 @@ jobs:
     
     - name: Install R and its Dependencies
       run: |
-         sudo apt-get install r-base r-base-core r-cran-tidyverse
+         apt-get install r-base r-base-core r-cran-tidyverse
    
     - name: List current dir....
       run: |
