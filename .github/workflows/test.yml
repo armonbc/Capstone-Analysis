@@ -14,7 +14,7 @@ jobs:
     - name: List current dir....
       run: |
         ls -la "/usr/local/lib/R/site-library"
-        sudo su - && which R && whoami
+        sudo su - && which R && whoami && ls -la ~/.cache/R/renv
     
     - name: Removing existing R
       run: |
@@ -45,4 +45,5 @@ jobs:
     - name: Test R
       run: |
         cd Rscripts && Rscript dataset_prepare.R
+        ls -la ~/.cache/R/renv
     
