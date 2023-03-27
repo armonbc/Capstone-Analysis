@@ -17,14 +17,15 @@ jobs:
         echo "RENV_PATHS_ROOT=${{ runner.temp }}/renv" >> $GITHUB_ENV
     - name: Install and activate renv
       run: |
-        Rscript -e 'install.packages("renv")'
-        Rscript -e 'renv::activate()'
+        sudo apt install r-cran-renv
+  
     - name: Get R and OS version
       id: get-version
       run: |
         cat("##[set-output name=os-version;]", sessionInfo()$running, "\n", sep = "")
         cat("##[set-output name=r-version;]", R.Version()$version.string, sep = "")
         shell: Rscript {0}
+    
     - name: Restore Renv package cache
       uses: actions/cache@v3
       with:
