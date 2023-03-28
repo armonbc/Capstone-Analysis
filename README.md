@@ -4,7 +4,7 @@
 
 <h2 align="center"><b>Cyclistic Data Analysis</b></h2>
 <p align="center">
-  A 12-year in-depth analysis of Cyclistic Case Study for the period March of 2022 to Feb of 2023.
+  A 12-month in-depth analysis of Cyclistic Case Study for the period March of 2022 to Feb of 2023.
 <p>
 <p align="center">
   <a href="https://github.com/armonbc/Capstone-Analysis/releases">Data Releases</a> &nbsp; &#8226; &nbsp;
