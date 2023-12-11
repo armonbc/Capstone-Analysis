@@ -1,2 +1,4 @@
 *.ipnyb
 *.ipynb*
+*/sample/*
+*.git
