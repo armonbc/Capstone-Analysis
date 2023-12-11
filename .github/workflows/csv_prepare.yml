@@ -1,0 +1,74 @@
+name: 1. Download All CSV Operations
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  python_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: List current dir....
+      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
+    
+    - name: checkout repo content
+      uses: actions/checkout@v2 # checkout the repository content
+
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' # install the python version needed
+
+    - name: Install python packages....
+      run: |
+          python -m pip install --upgrade pip
+          pip3 install bs4 requests lxml
+          sudo apt install clang
+    
+    - name: Install R and its Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install r-base r-cran-ggplot2 r-cran-dplyr r-cran-tidyr r-cran-readr r-cran-tibble r-cran-stringr r-cran-forcats r-cran-purrr r-cran-httr r-cran-jsonlite r-cran-lubridate r-cran-xml2 r-cran-rlang r-cran-lazyeval r-cran-broom r-cran-modelr r-cran-ggthemes r-cran-farver r-cran-labeling r-cran-munsell r-cran-plyr r-cran-scales r-cran-colorspace r-cran-viridis r-cran-gtable r-cran-gridextra r-cran-cowplot r-cran-ggrepel r-cran-ggpubr r-cran-tidyverse
+
+    - name: Executing Python....
+      run: |
+          cd Pythonscripts && python3 all_zip_downloader.py
+      
+    - name: Unzip Files
+      run: |
+        unzip "original_zipfiles/*.zip" "*.csv" -d "original_datasets"
+        zip -r original_datasets.zip original_datasets
+        ls -la "original_datasets/"
+        cd Rscripts && Rscript dataset_prepare.R
+
+    - name: Create Release
+      id: create_release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          original_datasets.zip
+        tag_name: v2023.03.01.Uncleaned_Datasets
+        name: Uncleaned Datasets (2022-02 to 2023-03)
+        body: |
+          This is the first release of our project.
+          It includes several new features and bug fixes.
+        prerelease: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
+    
+    - name: Configure Git
+      env:
+        USER_NAME: ${{secrets.GH_NAME}}
+        USER_MAIL: ${{secrets.GH_EMAIL}} 
+        USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
+        GITHUB_TOKEN: $USER_TOKEN
+      run: |
+        git config --global user.name USER_NAME
+        git config --global user.email USER_MAIL
+
+    - name: Upload Git
+      run: |
+        git checkout -b temp_branch
+        git add Logs
+        git commit -m "Preparation"
+        git push origin HEAD:temp_branch
+

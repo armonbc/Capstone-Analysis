@@ -1,0 +1,56 @@
+name: 3. Bar Chart Creation
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  rscript_job:
+    runs-on: ubuntu-latest
+    steps:
+  
+    - name: checkout repo content
+      uses: actions/checkout@v3 # checkout the repository content
+  
+    - name: List current dir....
+      run: ls -la "/home/runner/work/Capstone-Analysis/Capstone-Analysis"
+  
+    - name: Unzip Files
+      run: |
+        wget -O Cleaned_Datasets.zip https://github.com/armonbc/Capstone-Analysis/releases/download/v2023.03.01.Cleaned_Datasets/cleaned_datasets.zip
+        pwd && ls -la
+        unzip -j "Cleaned_Datasets.zip" "*.csv" -d "cleaned_datasets"
+        pwd && ls -la "cleaned_datasets/"
+    
+    #- name: Cache R Packages
+    #  uses: actions/cache@v3
+    #  with:
+    #    path: /usr/lib/R/site-library/
+    #    key: ${{ runner.os }}-cran-packages-${{ hashFiles('/usr/share/doc/r-base/') }}
+    #    restore-keys: ${{ runner.os }}-cran-packages-
+    
+    - name: Install R and its Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install r-base r-cran-ggplot2 r-cran-dplyr r-cran-tidyr r-cran-readr r-cran-tibble r-cran-stringr r-cran-forcats r-cran-purrr r-cran-httr r-cran-jsonlite r-cran-lubridate r-cran-xml2 r-cran-rlang r-cran-lazyeval r-cran-broom r-cran-modelr r-cran-ggthemes r-cran-farver r-cran-labeling r-cran-munsell r-cran-plyr r-cran-scales r-cran-colorspace r-cran-viridis r-cran-gtable r-cran-gridextra r-cran-cowplot r-cran-ggrepel r-cran-ggpubr r-cran-tidyverse r-cran-png
+        Rscript -e "update.packages('png')"
+
+    - name: Creating Bar Chart
+      run: |
+        cd "Rscripts" && Rscript dataset_cleaned_barchart1.R
+
+    - name: Configure Git
+      env:
+        USER_NAME: ${{secrets.GH_NAME}}
+        USER_MAIL: ${{secrets.GH_EMAIL}} 
+        USER_TOKEN: ${{secrets.PUBLIC_REPO_ACCESS_TOKEN}}
+        GITHUB_TOKEN: $USER_TOKEN
+      run: |
+        git config --global user.name USER_NAME
+        git config --global user.email USER_MAIL
+
+    - name: Upload Git
+      run: |
+        git checkout -b temp_branch
+        git add cleaned_graphs Logs
+        git commit -m "Add bar chart"
+        git push origin HEAD:temp_branch
